@@ -1,12 +1,12 @@
 # Listen To Events
 
 {% hint style="info" %}
-To cause a widget inside `FlutterMap`'s context to rebuild when the `MapCamera`, `MapOptions`, or `MapController` changes, see [#hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#hooking-into-inherited-state "mention").
+To cause a widget inside `FlutterMap`'s context to rebuild when the [`MapCamera`](get-camera.md), [`MapOptions`](../options.md), or [`MapController`](controller.md) changes, see [#hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#hooking-into-inherited-state "mention").
 
 This page's methods should only be used to listen to events from outside the `FlutterMap`'s context.
 {% endhint %}
 
-When changes happen to `FlutterMap`'s internal state (such as a change to the current [`MapCamera`](get-current-camera.md)) it emits a `MapEvent`, which can be handled by you.
+When changes happen to `FlutterMap`'s internal state (such as a change to the current [`MapCamera`](get-camera.md)) it emits a `MapEvent`, which can be handled by you.
 
 ## Catching All Events
 

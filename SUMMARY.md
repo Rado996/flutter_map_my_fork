@@ -19,7 +19,7 @@
 * [Layers](usage/layers.md)
 * [Interaction & Control](usage/interaction-and-control/README.md)
   * [Control Camera](usage/interaction-and-control/controller.md)
-  * [Get Current Camera](usage/interaction-and-control/get-current-camera.md)
+  * [Get Camera](usage/interaction-and-control/get-camera.md)
   * [Listen To Events](usage/interaction-and-control/listen-to-events.md)
 * [Full API Reference](https://pub.dev/documentation/flutter\_map/latest/flutter\_map/flutter\_map-library.html)
 

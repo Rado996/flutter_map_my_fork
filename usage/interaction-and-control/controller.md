@@ -1,6 +1,6 @@
 # Control Camera
 
-To control the map (such as moving it to a new position and zoom level), you'll need a `MapController`. The controller does not provide access to the current viewport/camera: that is the responsibility of `MapCamera`.
+To control the map (such as moving it to a new position and zoom level), you'll need a `MapController`. The controller does not provide access to the current viewport/camera: that is the responsibility of [`MapCamera`](get-camera.md).
 
 {% embed url="https://pub.dev/documentation/flutter_map/latest/flutter_map/MapController-class.html" %}
 
@@ -9,10 +9,10 @@ To control the map (such as moving it to a new position and zoom level), you'll 
 To control the map from within the context of a `FlutterMap` widget, use `MapController.of(context)`.
 
 {% hint style="info" %}
-Calling this method in a `build` method will cause the widget to automatically rebuild when the `MapController` changes. See [#hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#hooking-into-inherited-state "mention") for more information.
+Calling this method in a `build` method will cause the widget to automatically rebuild if the `MapController` changes. See [#hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#hooking-into-inherited-state "mention") for more information.
 {% endhint %}
 
-If this is `null` or throws a `StateError`, try wrapping the concerned widget in a `Builder`, to ensure the `FlutterMap` widget is parenting the `BuildContext`. If this has no effect, use [#usage-outside-of-fluttermap](controller.md#usage-outside-of-fluttermap "mention") instead.
+If this throws a `StateError`, try wrapping the concerned widget in a `Builder`, to ensure the `FlutterMap` widget is parenting the `BuildContext`. If this has no effect, use [#usage-outside-of-fluttermap](controller.md#usage-outside-of-fluttermap "mention") instead.
 
 ## Usage Outside Of `FlutterMap`
 

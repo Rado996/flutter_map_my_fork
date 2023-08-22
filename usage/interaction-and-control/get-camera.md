@@ -1,4 +1,4 @@
-# Get Current Camera
+# Get Camera
 
 The `MapCamera` object describes the map's current viewport. It does not provide methods to change it: that is the responsibility of a [`MapController`](controller.md).
 
@@ -15,10 +15,10 @@ To get the camera from within the context of a `FlutterMap` widget, use `MapCame
 {% hint style="info" %}
 Calling this method in a `build` method will cause the widget to automatically rebuild when the `MapCamera` changes. See [#hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#hooking-into-inherited-state "mention") for more information.
 
-If this behaviour is unwanted, use [#single-time](get-current-camera.md#single-time "mention") instead.
+If this behaviour is unwanted, use [#single-time](get-camera.md#single-time "mention") instead.
 {% endhint %}
 
-If this is `null` or throws a `StateError`, try wrapping the concerned widget in a `Builder`, to ensure the `FlutterMap` widget is parenting the `BuildContext`. If this has no effect, use [#usage-outside-of-fluttermap](get-current-camera.md#usage-outside-of-fluttermap "mention") instead.
+If this throws a `StateError`, try wrapping the concerned widget in a `Builder`, to ensure the `FlutterMap` widget is parenting the `BuildContext`. If this has no effect, use [#usage-outside-of-fluttermap](get-camera.md#usage-outside-of-fluttermap "mention") instead.
 
 ## Usage Outside Of `FlutterMap`
 
@@ -29,7 +29,7 @@ To get the camera from outside the context of the `FlutterMap` widget, you'll ne
 Then, use the `.camera` getter.
 
 {% hint style="warning" %}
-Avoid using `MapController.of(context).camera`, as it is redundant and less performant than using `MapCamera.of(context)` directly.
+Avoid using `MapController.of(context).camera` from within the context of `FlutterMap`, as it is redundant and less performant than using `MapCamera.of(context)` directly.
 {% endhint %}
 
 ### Listen To Changes

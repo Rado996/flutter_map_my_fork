@@ -10,25 +10,17 @@ These are usually restricted by [options.md](../options.md "mention"). It is pos
 
 ## via Programmatic Means
 
-### Control Camera
+When using programmatic means, there's two methods to most things, dependent on whether the context is within a `FlutterMap` (ie. usually a layer) or not.
 
-To manipulate the map, for example to change its viewport, use a `MapController`.
+If within `FlutterMap`'s context, the methods usually cause automatic rebuilding. As well as the pages below, also see [#hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#hooking-into-inherited-state "mention").
 
 {% content-ref url="controller.md" %}
 [controller.md](controller.md)
 {% endcontent-ref %}
 
-### Get Current Camera
-
-In order to get the current viewport, retrieve a `MapCamera` object.
-
-{% content-ref url="get-current-camera.md" %}
-[get-current-camera.md](get-current-camera.md)
+{% content-ref url="get-camera.md" %}
+[get-camera.md](get-camera.md)
 {% endcontent-ref %}
-
-### Listen To Events
-
-It's also possible to listen to events, including changes to the current `MapCamera` object.
 
 {% content-ref url="listen-to-events.md" %}
 [listen-to-events.md](listen-to-events.md)

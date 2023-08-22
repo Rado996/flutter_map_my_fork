@@ -12,18 +12,18 @@ These are usually restricted by [options.md](../options.md "mention"). It is pos
 
 ### Control Camera
 
-To manipulate the map, for example changing its position and zoom level, use a `MapController`. There's two available methods to do this, described in this page:
+To manipulate the map, for example to change its viewport, use a `MapController`.
 
 {% content-ref url="controller.md" %}
 [controller.md](controller.md)
 {% endcontent-ref %}
 
-### Get Camera Once
+### Get Current Camera
 
-In order to get the current viewport a single time, retrieve a `MapCamera` object.
+In order to get the current viewport, retrieve a `MapCamera` object.
 
-{% content-ref url="get-camera-once.md" %}
-[get-camera-once.md](get-camera-once.md)
+{% content-ref url="get-current-camera.md" %}
+[get-current-camera.md](get-current-camera.md)
 {% endcontent-ref %}
 
 ### Listen To Events

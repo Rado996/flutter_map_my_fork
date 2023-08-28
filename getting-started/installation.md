@@ -2,7 +2,7 @@
 
 ## Install
 
-{% hint style="info" %}
+{% hint style="success" %}
 All users should also [install 'latlong2'](https://pub.dev/packages/latlong2/install) to work with coordinates in 'flutter\_map'.
 
 In the event that the `LatLng` object provided by that library conflicts with another, for example the one provided by Google Maps, you may need to [use the 'as' suffix](https://dart.dev/guides/packages#importing-libraries-from-packages).
@@ -74,16 +74,9 @@ After installing the package, import it into the necessary files in your project
 </code></pre>
 
 {% hint style="warning" %}
-Before using flutter\_map, ensure you comply with the appropriate restrictions and terms of service set by your tile server. Failure to do so may lead to any punishment, at the tile server's discretion.
+You must comply with the appropriate restrictions and terms of service set by your tile server. Failure to do so may lead to any punishment, at the tile server's discretion.
 
 This library and/or the creator(s) are not responsible for any violations you make using this package.
 
-***
-
-Some common tile servers' ToS are listed below:
-
-* [OpenStreetMap](https://operations.osmfoundation.org/policies/tiles)
-* [Mapbox](https://www.mapbox.com/legal/tos)
-* [Thunderforest](https://www.thunderforest.com/terms/)
-* [Stadia Maps](https://stadiamaps.com/terms-of-service/)
+_The OpenStreetMap Tile Server (as used in this documentation) ToS can be_ [_found here_](https://operations.osmfoundation.org/policies/tiles)_. Other servers may have different terms._
 {% endhint %}

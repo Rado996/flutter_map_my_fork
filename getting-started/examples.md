@@ -28,10 +28,6 @@ The Web artifact requires unzipping and serving, as it contains more than one un
 Note that these artifacts are built automatically from the ['master' branch](https://github.com/fleaflet/flutter\_map), so may not reflect the the latest release on pub.dev.
 {% endhint %}
 
-{% hint style="warning" %}
-Note that these artifacts may become unavailable a while, in which case you'll need to build from source.
-{% endhint %}
-
 {% embed url="https://nightly.link/fleaflet/flutter_map/workflows/master/master" %}
 Latest Build Artifacts (thanks [nightly](https://nightly.link/))
 {% endembed %}

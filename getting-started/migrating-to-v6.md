@@ -6,19 +6,29 @@ This update has renewed two of the oldest surviving sections of 'flutter\_map' (
 This is significant progress in our aim to renew the project and bring it up to date. In the long run, this will bring it inline with up-to-date Flutter good practises and techniques, improve its performance and stability, and reduce the maintenance burden.
 {% endhint %}
 
-{% hint style="success" %}
-If you're developing an app for the web, there's an exciting new performance boost available. See [#cancellablenetworktileprovider](../layers/tile-layer/tile-providers.md#cancellablenetworktileprovider "mention") for more information.
-{% endhint %}
+There are major breaking changes for all users, as well as some things users should check and possibly change.
 
-There are major breaking changes for all users. Some changes have deprecations and messages, some do not.
-
-Please refer to the sections below for information on how to migrate your project, as well as in-code documentation and deprecation messages, if your migration is not listed below.
+Some changes have deprecations and messages, some do not. Please refer to the sections below for information on how to migrate your project, as well as in-code documentation and deprecation messages, if your migration is not listed below.
 
 Some changes are omitted if they are deemed unlikely to affect implementations.
 
 {% embed url="https://github.com/fleaflet/flutter_map/blob/master/CHANGELOG.md" %}
 Full Changelog
 {% endembed %}
+
+## Important Non-Migration Recommendations
+
+{% hint style="success" %}
+If you're developing an app for the web, there's an exciting new performance boost available, that must be installed manually! See [#cancellablenetworktileprovider](../layers/tile-layer/tile-providers.md#cancellablenetworktileprovider "mention") for more information.
+{% endhint %}
+
+{% hint style="warning" %}
+If you're using subdomains with OpenStreetMap's tile server, use the non-subdomained `urlTemplate` instead. See [https://github.com/fleaflet/flutter\_map/issues/1631](https://github.com/fleaflet/flutter\_map/issues/1631) and [https://github.com/openstreetmap/operations/issues/737](https://github.com/openstreetmap/operations/issues/737) for more information.
+{% endhint %}
+
+{% hint style="warning" %}
+If you're compiling a web app, always use the CanvasKit renderer instead of the HTML renderer. See [#web](installation.md#web "mention") for more information.
+{% endhint %}
 
 ## General/Misc
 

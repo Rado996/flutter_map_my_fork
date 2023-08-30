@@ -12,8 +12,8 @@ In the event that the `LatLng` object provided by that library conflicts with an
 
 Just import the package as you would normally, from the command line:
 
-<pre class="language-bash"><code class="lang-bash"><strong>flutter pub add flutter_map
-</strong>flutter pub add latlong2
+<pre class="language-bash"><code class="lang-bash">flutter pub add flutter_map latlong2
+flutter pub add <a data-footnote-ref href="#user-content-fn-1">flutter_map_cancellable_tile_provider</a> # OPTIONAL
 </code></pre>
 
 ### From [github.com](https://github.com/fleaflet/flutter\_map)
@@ -42,6 +42,8 @@ dependency_overrides:
 
 Always force usage of the CanvasKit renderer instead of the HTML renderer, even on mobile devices.
 
+The HTML renderer causes performance issues, and may also cause other bugs. Although the CanvasKit renderer does require slightly more Javascript (and therefore a longer download time), it works much better with flutter\_map.
+
 For more information about web renderers, see [https://docs.flutter.dev/platform-integration/web/renderers](https://docs.flutter.dev/platform-integration/web/renderers).
 
 ### Android
@@ -69,9 +71,10 @@ flutter\_map needs to access the Internet to load tiles, in most cases. On MacOS
 
 After installing the package, import it into the necessary files in your project:
 
-<pre class="language-dart"><code class="lang-dart"><strong>import 'package:flutter_map/flutter_map.dart';
-</strong>import 'package:latlong2/latlong.dart';
-</code></pre>
+```dart
+import 'package:flutter_map/flutter_map.dart';
+import 'package:latlong2/latlong.dart';
+```
 
 {% hint style="warning" %}
 You must comply with the appropriate restrictions and terms of service set by your tile server. Failure to do so may lead to any punishment, at the tile server's discretion.
@@ -80,3 +83,5 @@ This library and/or the creator(s) are not responsible for any violations you ma
 
 _The OpenStreetMap Tile Server (as used in this documentation) ToS can be_ [_found here_](https://operations.osmfoundation.org/policies/tiles)_. Other servers may have different terms._
 {% endhint %}
+
+[^1]: [#cancellablenetworktileprovider](../layers/tile-layer/tile-providers.md#cancellablenetworktileprovider "mention")

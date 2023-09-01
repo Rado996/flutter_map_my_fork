@@ -4,12 +4,12 @@ Before publishing your app to users, you should credit any sources you use, acco
 
 There are two built in methods to provide attribution, `RichAttributionWidget` and `SimpleAttributionWidget`, but you can also build your own using a simple `Align` widget. All of these should be inserted into the map's `nonRotatedChildren`.
 
-{% hint style="danger" %}
-You must comply to your tile server's ToS. Failure to do so may result in you being banned from their services.
+{% hint style="warning" %}
+You must comply with the appropriate restrictions and terms of service set by your tile server. Failure to do so may lead to any punishment, at the tile server's discretion.
 
-The OpenStreetMap Tile Server (as used above) can be [found here](https://operations.osmfoundation.org/policies/tiles). Other servers may have different terms.
+This library and/or the creator(s) are not responsible for any violations you make using this package.
 
-This package is not responsible for your misuse of another tile server.
+_The OpenStreetMap Tile Server (as used above) ToS can be_ [_found here_](https://operations.osmfoundation.org/policies/tiles)_. Other servers may have different terms._
 {% endhint %}
 
 {% hint style="success" %}

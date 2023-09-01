@@ -8,29 +8,39 @@ This is significant progress in our aim to renew the project and bring it up to 
 
 There are major breaking changes for all users, as well as some things users should check and possibly change.
 
-Some changes have deprecations and messages, some do not. Please refer to the sections below for information on how to migrate your project, as well as in-code documentation and deprecation messages, if your migration is not listed below.
+Some changes have deprecations and messages, some do not. Please refer to the sections below for information on how to migrate your project, as well as in-code documentation and deprecation messages, if your migration is not listed below. Some changes are omitted if they are deemed unlikely to affect implementations.
 
-Some changes are omitted if they are deemed unlikely to affect implementations.
+## Changelog & Highlights
+
+There's loads of changes in this release, which will improve performance and reduce costs! Check out these highlights, along with the full changelog:
 
 {% embed url="https://github.com/fleaflet/flutter_map/blob/master/CHANGELOG.md" %}
 Full Changelog
 {% endembed %}
 
-## Important Non-Migration Recommendations
+{% hint style="success" %}
+We've added in-memory caching to the underlying custom `ImageProvider`. This means that they do not need to be re-requested if they are pruned then re-loaded, reducing tile loading times, and reduce tile requests and costs!
+
+No action is needed to benefit from this.
+{% endhint %}
 
 {% hint style="success" %}
-If you're developing an app for the web, there's an exciting new performance boost available, that must be installed manually! See [#cancellablenetworktileprovider](../layers/tile-layer/tile-providers.md#cancellablenetworktileprovider "mention") for more information.
+If you're developing an app for the web, there's an exciting new performance boost available. By aborting in-flight HTTP requests if tiles are pruned before they are fully-loaded, connections can be freed up, reducing tile loading times, and potentially saving you money!
+
+Manual action is required to benefit from this. See [#cancellablenetworktileprovider](../layers/tile-layer/tile-providers.md#cancellablenetworktileprovider "mention") for more information.
 {% endhint %}
 
-{% hint style="warning" %}
-If you're using subdomains with OpenStreetMap's tile server, use the non-subdomained `urlTemplate` instead. See [https://github.com/fleaflet/flutter\_map/issues/1631](https://github.com/fleaflet/flutter\_map/issues/1631) and [https://github.com/openstreetmap/operations/issues/737](https://github.com/openstreetmap/operations/issues/737) for more information.
+{% hint style="success" %}
+Rotation is now supported on desktop! Simply use the CTRL (or equivalent) keyboard key (customizable in `MapOptions`) and mouse.
 {% endhint %}
 
-{% hint style="warning" %}
-If you're compiling a web app, always use the CanvasKit renderer instead of the HTML renderer. See [#web](installation.md#web "mention") for more information.
+{% hint style="info" %}
+We've added some warning & recommendation logs in-code, that will trigger under certain circumstances. If they trigger, make sure to listen to them to benefit from performance and efficiency improvements!
 {% endhint %}
 
-## General/Misc
+## Migration Instructions
+
+### General/Misc
 
 <details>
 
@@ -89,7 +99,7 @@ To migrate, replace occurences of `AnchorAlign` with the respective `Aligment`. 
 
 </details>
 
-## Map Options
+### Map Options
 
 <details>
 
@@ -111,7 +121,7 @@ To migrate, rename the properties, and also check the in-code documentation and 
 
 </details>
 
-## Tile Providers & `templateFunction`
+### Tile Providers & `templateFunction`
 
 <details>
 

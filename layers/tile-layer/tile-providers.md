@@ -13,6 +13,14 @@ There's two situations in which you'll need to change the tile provider:
 
 These tile providers use the `urlTemplate` to get the appropriate tile from the a network, usually the World Wide Web.
 
+The underlying custom `ImageProvider`s will cache tiles in memory, so that they do not require another request to the tile server if they are pruned then re-loaded. This should result in them being loaded quicker, as well as enabling already loaded tiles to appear even without Internet connection (at least in the same session).
+
+{% hint style="warning" %}
+Specifying any `fallbackUrl` (even if it is not used) in the `TileLayer` will prevent loaded tiles from being cached in memory.
+
+This is to avoid issues where the `urlTemplate` is flaky (sometimes works, sometimes doesn't), to prevent potentially different tilesets being displayed at the same time.
+{% endhint %}
+
 ### `NetworkTileProvider`
 
 This is the default tile provider, and does nothing particularly special. It takes two arguments, but you'll usually never need to specify them:
@@ -27,7 +35,7 @@ This is the default tile provider, and does nothing particularly special. It tak
 {% hint style="info" %}
 This requires the '[flutter\_map\_cancellable\_tile\_provider](https://github.com/fleaflet/flutter\_map\_cancellable\_tile\_provider)' plugin to be installed.
 
-This plugin is part of the official flutter\_map organisation, and maintained by this library's maintainers.
+This plugin is part of the official 'flutter\_map' organisation, and maintained by the same maintainers.
 {% endhint %}
 
 If a large proportion of your users use the web platform, it is preferable to use this tile provider instead of the default `NetworkTileProvider`.
@@ -38,7 +46,7 @@ It could:
 * Reduce costly tile requests to tile servers\*[^1]
 * Reduce (cellular) data consumption
 
-This provider uses '[dio](https://pub.dev/packages/dio)' to support cancelling/aborting unnecessary HTTP requests in-flight. Tiles that are removed/pruned before they are fully loaded do not need to complete loading, and therefore do not need to complete the HTTP interaction. Closing the connection in this way frees it up for other tile requests, and avoids downloading unused data.
+This provider uses '[dio](https://pub.dev/packages/dio)' to abort unnecessary HTTP requests in-flight. Tiles that are removed/pruned before they are fully loaded do not need to complete loading, and therefore do not need to complete the HTTP interaction. Closing the connection in this way frees it up for other tile requests, and avoids downloading unused data.
 
 There's no reason not use this tile provider, unless you'd rather avoid having 'dio' as a dependency. Once HTTP request abortion is [added to Dart's 'native' 'http' package (requested and PR opened)](https://github.com/dart-lang/http/issues/424), `NetworkTileProvider` will be updated to take advantage of it, replacing this provider.
 

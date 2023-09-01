@@ -25,7 +25,7 @@ _The OpenStreetMap Tile Server (as used above) ToS can be_ [_found here_](https:
 ## URL Template
 
 {% hint style="success" %}
-The `urlTemplate` parameter must be specified unless [`wmsOptions`](wms-usage.md) is specified.
+This parameter must be specified unless [`wmsOptions`](wms-usage.md) is specified.
 {% endhint %}
 
 The URL template is a string that contains placeholders, which, when filled in, create a URL/URI to a specific tile.
@@ -41,18 +41,26 @@ These templates are usually documented by your tile server, and will always incl
 Sometimes, they also include:
 
 * `{s}`: subdomain\
-  Now usually [considered redundant](https://github.com/openstreetmap/operations/issues/737) due to the usage of HTTP/2 & HTTP/3, this bypassed browsers' limitations on simultaneous HTTP connections\
+  Now usually [considered redundant](https://github.com/openstreetmap/operations/issues/737) due to the usage of HTTP/2 & HTTP/3, this bypassed browsers' limitations on simultaneous HTTP connections.\
   To use subdomains, also configure the `TileLayer.subdomains` parameter.
 * `{r}` or `@2x`: retina mode\
-  Request high-definition tiles from the tile server
+  Request [high-definition tiles](https://wiki.openstreetmap.org/wiki/High-resolution\_tiles) from the tile server
 
 {% hint style="warning" %}
-`TileLayer.retinaMode` can be used to emulate retina tiles. Do not combine it with an `{r}` or `@2x` placeholder.
+`TileLayer.retinaMode` can be used to emulate retina tiles. Avoid combining it with an `{r}` or `@2x` placeholder.
 
 It does not change whether the `{r}` placeholder is filled or emptied (it is always filled).
 {% endhint %}
 
 Additional placeholders can also be added freely to the template, and are filled in with the specified values in `additionalOptions`.
+
+### Fallback URL Template
+
+It's also possible to specify a `fallbackUrl` template, used if fetching a tile from the primary `urlTemplate` fails (which has the same format as this).
+
+{% hint style="warning" %}
+Specifying a `fallbackUrl` does have negative effects on performance and efficiency. See in-code documentation and [tile-providers.md](tile-providers.md "mention") for more information.
+{% endhint %}
 
 ## `userAgentPackageName`
 

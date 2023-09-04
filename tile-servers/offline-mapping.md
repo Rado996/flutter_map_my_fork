@@ -2,20 +2,26 @@
 
 Using maps without an Internet connection is common requirement. Luckily, there are a few options available to you to implement offline mapping in your app.
 
-* [Caching](offline-mapping.md#caching-and-bulk-downloading)\
+* [Caching](offline-mapping.md#caching)\
   Automatically store tiles as the user loads them through interacting with the map
-* [Bulk downloading](offline-mapping.md#caching-and-bulk-downloading)\
+* [Bulk downloading](offline-mapping.md#bulk-downloading)\
   Download an entire area/region of tiles in one shot, ready for a known no-Internet situation
 * [Bundling](offline-mapping.md#bundled-map-tiles)\
   Provide a set of tiles to all users through assets or the filesystem
 
-## Caching & Bulk Downloading
+## Caching
 
-The [community maintained plugin 'flutter\_map\_tile\_caching'](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching) aims to solve the first two points. FMTC is designed to be easy to implement, but also sufficiently advanced to cover most (if not all) use cases.
+There's 3 methods that basic caching can be implemented in your app, two of which rely on community maintained plugins:
 
-However, using simpler packages in a DIY solution can be a better option in some cases. You'll need to implement a custom `TileProvider` backed by an alternative image provider or cache lookup system: see [creating-new-tile-providers.md](../plugins/making-a-plugin/creating-new-tile-providers.md "mention").
+1. [flutter\_map\_cache](https://github.com/josxha/flutter\_map\_cache) (lightweight and MIT licensed)
+2. [flutter\_map\_tile\_caching](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching) (also includes [#bulk-downloading](offline-mapping.md#bulk-downloading "mention"), but GPL licensed)
+3. Custom implementation, via a [custom `TileProvider`](../plugins/making-a-plugin/creating-new-tile-providers.md) and `ImageProvider` (either custom or via a package such as [cached\_network\_image](https://pub.dev/packages/cached\_network\_image))
 
-To help choose whether FMTC or DIY is more appropriate for your use case, please see:
+## Bulk Downloading
+
+When it comes to bulk downloading, this is much more complex than [#caching](offline-mapping.md#caching "mention"), especially for regions that are a non-rectangular shape. Implementing this can be very time consuming and prone to issues.
+
+The [community maintained plugin 'flutter\_map\_tile\_caching'](https://github.com/JaffaKetchup/flutter\_map\_tile\_caching) includes advanced bulk downloading functionality, of multiple different region shapes, and other functionality. It is however GPL licensed. To help choose whether FMTC or DIY is more appropriate for your use case, please see:
 
 {% embed url="https://fmtc.jaffaketchup.dev/is-fmtc-right-for-me" %}
 

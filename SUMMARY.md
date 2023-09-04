@@ -6,8 +6,8 @@
 
 ## Getting Started
 
+* [Demonstration](http://127.0.0.1:5000/s/6crWs9H40DxNQrzXYdrt/#demonstration)
 * [Installation](getting-started/installation.md)
-* [Quickstart](http://127.0.0.1:5000/s/6crWs9H40DxNQrzXYdrt/#demonstration)
 * [Examples](getting-started/examples.md)
 * [Migrating To v6](getting-started/migrating-to-v6.md)
 
@@ -35,13 +35,6 @@
 * [Overlay Image Layer](layers/overlay-image-layer.md)
 * [Attribution Layer](layers/attribution-layer.md)
 
-## Plugins
-
-* [Plugins List](plugins/list.md)
-* [Creating A Plugin](plugins/making-a-plugin/README.md)
-  * [Creating New Tile Providers](plugins/making-a-plugin/creating-new-tile-providers.md)
-  * [Creating New Layers](plugins/making-a-plugin/creating-new-layers.md)
-
 ## Tile Servers
 
 * [Using Mapbox](tile-servers/using-mapbox.md)
@@ -50,8 +43,14 @@
 * [Offline Mapping](tile-servers/offline-mapping.md)
 * [Other Options](tile-servers/other-options.md)
 
+## Plugins
+
+* [Plugins List](plugins/list.md)
+* [Creating A Plugin](plugins/making-a-plugin/README.md)
+  * [Creating New Tile Providers](plugins/making-a-plugin/creating-new-tile-providers.md)
+  * [Creating New Layers](plugins/making-a-plugin/creating-new-layers.md)
+
 ***
 
 * [Frequently Asked Questions](frequently-asked-questions.md)
-* [Contributing](contributing.md)
 * [Credits](credits.md)

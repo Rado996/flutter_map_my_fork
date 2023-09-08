@@ -1,5 +1,9 @@
 # Credits
 
+{% hint style="success" %}
+We're on the hunt for maintainers to join the team! For more information, please see [#apply-to-be-a-maintainer](credits.md#apply-to-be-a-maintainer "mention").
+{% endhint %}
+
 Thanks to everyone who has contributed to flutter\_map in any way, you've helped make the most popular non-commercially aimed mapping solution for Flutter! As well as those that have contributed directly to the code, this includes everyone on the Discord server, everyone who's following the progress, and everyone that's participating in discussions and issues.
 
 If you want to contribute to the codebase, please visit the [Broken link](broken-reference "mention") instructions. We'd love to have your input!
@@ -44,3 +48,7 @@ If we deny your PR for this reason, please do consider publishing a plugin, and 
 * Create a draft PR as soon as work starts, and take it out of draft status when ready for review
 * Avoid changing the package version or GitHub workflows
 * Fix issues reported by the GitHub workflows (such as formatting) yourself
+
+### Apply To Be A Maintainer
+
+{% embed url="https://forms.gle/jEeygGJZtBWUdLFf6" %}

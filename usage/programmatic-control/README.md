@@ -12,7 +12,7 @@ These are usually restricted by [options](../options/ "mention"). It is possible
 
 When using programmatic means, there's two methods to most things, dependent on whether the context is within a `FlutterMap` (ie. usually a layer) or not.
 
-If within `FlutterMap`'s context, the methods usually cause automatic rebuilding. As well as the pages below, also see [#hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#hooking-into-inherited-state "mention").
+If within `FlutterMap`'s context, the methods usually cause automatic rebuilding. As well as the pages below, also see [#2.-hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#2.-hooking-into-inherited-state "mention").
 
 {% content-ref url="controller.md" %}
 [controller.md](controller.md)

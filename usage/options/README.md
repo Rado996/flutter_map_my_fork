@@ -4,11 +4,11 @@ To dictate & restrict what the map can and should do, regardless of its contents
 
 It provides options that can be categorized into three main parts:
 
-* [Initial positioning](options.md#initial-positioning)\
+* [Initial positioning](./#initial-positioning)\
   Defines the location of the map when it is first loaded
-* [Permanent rules](options.md#permanent-rules)\
+* [Permanent rules](./#permanent-rules)\
   Defines restrictions that last throughout the map's lifetime
-* [Event handling](interaction-and-control/listen-to-events.md)\
+* [Event handling](../programmatic-control/listen-to-events.md)\
   Defines methods that are called on specific map events
 
 {% embed url="https://pub.dev/documentation/flutter_map/latest/flutter_map/MapOptions-class.html" %}
@@ -18,7 +18,7 @@ It provides options that can be categorized into three main parts:
 {% hint style="info" %}
 Changing these properties after the map has already been built for the first time will have no effect: they only apply on initialisation.
 
-To control the map programatically, use a `MapController`: [controller.md](interaction-and-control/controller.md "mention").
+To control the map programatically, use a `MapController`: [controller.md](../programmatic-control/controller.md "mention").
 {% endhint %}
 
 One part of `MapOptions` responsibilities is to define how the map should be positioned when first loaded. There's two ways to do this (that are incompatible):
@@ -37,20 +37,31 @@ If rotation is enabled/allowed, if using `initialCameraFit`, prefer defining it 
 
 One part of `MapOptions` responsibilities is to define the restrictions and limitations of the map and what users can/cannot do with it.
 
-You should check [all the available options](https://pub.dev/documentation/flutter\_map/latest/flutter\_map/MapOptions-class.html), but these are recommended for most maps:
+Some of the options are described elsewhere in this documentation, in context. In addition, the API docs shows [all the available options](https://pub.dev/documentation/flutter\_map/latest/flutter\_map/MapOptions-class.html), and below is a partial list of options:
 
-* `maxZoom` (and `minZoom`)
 * `cameraConstraint`
   * camera bounds inside bounds: `CameraConstraint.bounds`
   * camera center inside bounds: `CameraConstraint.center`
   * _unconstrained (default): `CameraConstraint.unconstrained`_
-* `interactionOptions`\
-  Limits what methods the user can interact with the map through (for example, preventing rotation)
-* `keepAlive`\
-  If `FlutterMap` is located inside a `PageView`, `ListView` or another complex lazy layout, set this `true` to prevent the map from resetting to the [#initial-positioning](options.md#initial-positioning "mention") on rebuild
+* `maxZoom` and `minZoom`\
+  Sets a hard limit on the maximum and minimum amounts that the map can be zoomed
+* [`interactionOptions`](interaction-options.md)\
+  Configures the gestures that the user can use to interact with the map - for example, disable rotation or configure cursor/keyboard rotation
 
 {% hint style="success" %}
 Instead of `maxZoom` (or in addition to), consider setting `maxNativeZoom` per `TileLayer` instead, to allow tiles to scale (and lose quality) on the final zoom level, instead of setting a hard limit.
+{% endhint %}
+
+{% hint style="success" %}
+To prevent the user from panning and zooming outside of the tiles bounds, consider setting `cameraConstraint` to the following:
+
+```dart
+cameraConstraint: CameraConstraint.contain(
+  bounds: LatLngBounds(
+    const LatLng(-90, -180), const LatLng(90, 180),
+  ),
+),
+```
 {% endhint %}
 
 [^1]: Bounds inside camera

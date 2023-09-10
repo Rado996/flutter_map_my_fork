@@ -24,7 +24,7 @@ Each layer is isolated from the other layers, and so handles its own independent
 
 By default, each layer acts translucently to gestures, meaning they can handle gestures themselves, but they also allow gestures to bubble down to other layers beneath them.
 
-This behaviour can be disabled in the [`MapOptions`](options.md), by setting `.applyPointerTranslucencyToLayers` false. Optionally, then, the `TranslucentPointer` widget can be wrapped around individal layers to achieve the desired effect.
+This behaviour can be disabled in the [`MapOptions`](options/), by setting `.applyPointerTranslucencyToLayers` false. Optionally, then, the `TranslucentPointer` widget can be wrapped around individal layers to achieve the desired effect.
 
 ## Mobile vs Static Layers
 

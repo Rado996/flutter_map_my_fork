@@ -53,7 +53,7 @@ There are multiple possibilities for migration:
 1. If inside the `FlutterMap` context, prefer using `MapCamera.of(context)`
 2. Otherwise, use `MapController` in the same way, but use the `.camera` getter to retrieve the `MapCamera`.
 
-See [interaction-and-control](../usage/interaction-and-control/ "mention") for more information.
+See [programmatic-control](../usage/programmatic-control/ "mention") for more information.
 
 </details>
 

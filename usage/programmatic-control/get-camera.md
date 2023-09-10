@@ -13,7 +13,7 @@ The `MapCamera` object also provides access to some other helpful methods that d
 To get the camera from within the context of a `FlutterMap` widget, use `MapCamera.of(context)`.
 
 {% hint style="info" %}
-Calling this method in a `build` method will cause the widget to automatically rebuild when the `MapCamera` changes. See [#hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#hooking-into-inherited-state "mention") for more information.
+Calling this method in a `build` method will cause the widget to automatically rebuild when the `MapCamera` changes. See [#2.-hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#2.-hooking-into-inherited-state "mention") for more information.
 
 If this behaviour is unwanted, use [#single-time](get-camera.md#single-time "mention") instead.
 {% endhint %}

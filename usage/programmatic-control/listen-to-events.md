@@ -1,7 +1,7 @@
 # Listen To Events
 
 {% hint style="info" %}
-To cause a widget inside `FlutterMap`'s context to rebuild when the [`MapCamera`](get-camera.md), [`MapOptions`](../options.md), or [`MapController`](controller.md) changes, see [#hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#hooking-into-inherited-state "mention").
+To cause a widget inside `FlutterMap`'s context to rebuild when the [`MapCamera`](get-camera.md), [`MapOptions`](../options/), or [`MapController`](controller.md) changes, see [#hooking-into-inherited-state](../../plugins/making-a-plugin/creating-new-layers.md#hooking-into-inherited-state "mention").
 
 This page's methods should only be used to listen to events from outside the `FlutterMap`'s context.
 {% endhint %}
@@ -24,12 +24,12 @@ If only a couple of events need to be caught, such as just an `onTap` handler, i
 * `onPositionChanged`
 * `onPointerDown`/`onPointerUp`/`onPointerHover`/`onPointerCancel`
 * `onMapReady`\
-  Primarily used for advanced `MapController` [#usage-in-initstate](controller.md#usage-in-initstate "mention")
+  Primarily used for advanced `MapController` [#usage-inside-initstate](controller.md#usage-inside-initstate "mention")
 
 {% hint style="info" %}
 The `MapEventTap` event may be emitted (or the `onTap` callback called) 250ms after the actual tap occurred, as this is the acceptable delay between the two taps in a double tap zoom gesture.
 
-If this causes noticeable jank or a bad experience (for example, on desktop platforms), disable [`InteractiveFlag`](../options.md#permanent-rules)`.doubleTapZoom`:
+If this causes noticeable jank or a bad experience (for example, on desktop platforms), disable [`InteractiveFlag`](../options/#permanent-rules)`.doubleTapZoom`:
 
 ```dart
 options: MapOptions(

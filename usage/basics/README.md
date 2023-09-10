@@ -5,7 +5,7 @@
     options: MapOptions(),
     children: [],
 );
-</code></pre></td><td><p><img src="../../.gitbook/assets/Okay Icon" alt="" data-size="line"> <mark style="color:green;"><strong>Prefer</strong></mark></p><p>...using the normal constructor</p></td><td><hr><p>This constructor provides access to the full functionality set of flutter_map.<br><br>Start by adding some <a data-mention href="broken-reference">Broken link</a> to <code>children</code>, then configure the map in <a data-mention href="../options.md">options.md</a>.</p></td></tr><tr><td><pre class="language-dart"><code class="lang-dart">FlutterMap.simple(
+</code></pre></td><td><p><img src="../../.gitbook/assets/Okay Icon" alt="" data-size="line"> <mark style="color:green;"><strong>Prefer</strong></mark></p><p>...using the normal constructor</p></td><td><hr><p>This constructor provides access to the full functionality set of flutter_map.<br><br>Start by adding some <a data-mention href="broken-reference">Broken link</a> to <code>children</code>, then configure the map in <a data-mention href="../options/">options</a>.</p></td></tr><tr><td><pre class="language-dart"><code class="lang-dart">FlutterMap.simple(
     options: MapOptions(),
     urlTemplate: '',
     userAgentPackageName: '',
@@ -28,5 +28,11 @@ If you must restrict the widget's size, you won't find a `height` or `width` pro
 {% hint style="info" %}
 The map widget will expand as much as possible.
 
-To avoid errors about infinite/unspecified dimensions, ensure the map is contained within a known size widget.
+To avoid errors about infinite/unspecified dimensions, ensure the map is contained within a constrained widget.
 {% endhint %}
+
+### Keep Alive
+
+If the map is displayed lazily in something like a `PageView`, changing the page and unloading the map will cause it to reset to its [initial positioning](../options/#initial-positioning).
+
+To prevent this, set `MapOptions.keepAlive` `true`, which will activate an internal `AutomaticKeepAliveClientMixin`. This will retain the internal state container in memory, even when it would otherwise be disposed.
